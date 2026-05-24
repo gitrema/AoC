@@ -12,6 +12,7 @@ let input = readInput()
 func part1() -> String {
     var lanterns = input
     for day in 0..<80 {
+        print("\(day)")
         var lanternsToAdd = 0
         for index in 0...lanterns.count - 1 {
             if lanterns[index] == 0 {
@@ -28,35 +29,13 @@ func part1() -> String {
     return lanterns.count.description
 }
 
-func powerof2(_ exp: UInt64) -> UInt64 {
-    var value: UInt64 = 1
-
-    for _ in 1...exp {
-        value *= 2
-    }
-    return value
-}
-
-func progenia(_ state: UInt64, days: UInt64) -> UInt64 {
-    let nextsplit = days - state - 1
-
-    if (nextsplit < 0) { return 0 }
-    //
-    let sons = nextsplit/6
-    var value: UInt64 = 1
-    for _ in 0..<sons {
-        value += progenia(6, days: nextsplit-2)
-    }
-    return value
-}
-
 func part2() -> String {
     let lanterns = input
-
+    return ""
 }
 
 print(part1())
 print(part2())
 
 // corretto: 26984457539
-// rest:      4437053125
+// test:      4437053125
